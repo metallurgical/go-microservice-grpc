@@ -1,0 +1,40 @@
+syntax = "proto3";
+package api;
+
+// Define rpc services definition
+service Contact {
+    // Simple RPC
+    rpc CreateNewContact(ContactInformation) returns (ContactResponse) {}
+    // Client side streaming RPC
+    rpc GetContacts(ContactSearch) returns (stream ContactInformation) {}
+}
+
+message ContactInformation {
+    string name = 1;
+    string mobile_no = 2;
+    string office_no = 3;
+    string email = 4;
+    int32 id = 6;
+
+    message Address {
+        string line_1 = 1;
+        string line_2 = 2;
+        string postcode = 3;
+        string country = 4;
+        string city = 5;
+    }
+
+    repeated Address address = 5;
+}
+
+message ContactResponse {
+    int32 id = 1;
+    bool success = 2;
+}
+
+message ContactSearch {
+    string name = 1;
+}
+
+
+
