@@ -1,6 +1,11 @@
 # Introduction
 Implement gRPC(Remote Procedure Call) to enable microservice communicate to each other which using `protobuf` as a service definition without relying on `json`, `xml` to interchange the data between client and server.
 
+## Structure
+- **api** - Contains .`proto` file to define our RPC services and generated code derived from  `.proto` file
+- **server** - Implementation of server interface. The server will listen to RPC called from client
+- **client** - Implementation of client service interface. The client will make a RPC called to the server
+
 ## How to install & run
 To test in your local:
 
