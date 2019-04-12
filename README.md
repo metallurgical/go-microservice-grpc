@@ -7,7 +7,7 @@ Implement gRPC(Remote Procedure Call) to enable microservice communicate to each
 - **client** - Implementation of client service interface. The client will make a RPC called to the server
 
 ## How to install & run
-To test in your local:
+To test in your local(Make sure to run these two on different terminal's session):
 
 **[Option 1]** Just clone this repo into your local directory and run :
 - Run server - `go run server/main.go`
@@ -28,6 +28,11 @@ To test in your local:
   - Go to server directory, run `go install && server`
   - Go to client directory, run `go install && client`
   - This will compile and install both client and server and placing its executable files into `GOBIN` directory
+  
+ **[Option 5]** Make sure you install `go` and set  `GOPATH`. Then do following:
+ - `go get github.com/metallurgical/go-microservice-grpc/...`
+ - This will install both `client` and `server` out of the box into `GOBIN` directory
+ - Run `server` and `client` on different terminals.
   
   
   For any options you followed above, you should see the results :
